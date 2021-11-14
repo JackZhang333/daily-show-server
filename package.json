@@ -1,0 +1,27 @@
+{
+  "name": "daily-show-server",
+  "version": "1.0.0",
+  "description": "the server side of daily show",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "johnny chou",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "koa-session": "^6.0.0",
+    "mime": "^2.4.5",
+    "mysql2": "^2.1.0",
+    "mz": "^2.7.0",
+    "sequelize": "^5.21.7",
+    "svg-captcha": "^1.4.0",
+    "uuid": "^8.3.0"
+  }
+}
