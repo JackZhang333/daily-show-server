@@ -1,4 +1,4 @@
-const UserTag = require('../services/UserTag')
+const UserTag = require('../services/userTag')
 
 const addUserTag = async(ctx,next)=>{
     const {request,response} = ctx
