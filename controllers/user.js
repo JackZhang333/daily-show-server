@@ -9,14 +9,25 @@ const addUser = async (ctx,next)=>{
     })
     await next()
 }
-//通过手机号查询某个用户
-const searchUserByPhone = async (ctx,next)=>{
-    let {phoneNumber} = ctx.request.body
-    console.log('查询的手机号'+phoneNumber)
-    ctx.rest({
-        code:'200',
-        msg:'get the phone success!'
-    })
+//通过微信UNIONID查询某个用户
+const searchUserByWeChatID = async (ctx,next)=>{
+    let {weChatID} = ctx.request.body
+    // console.log(JSON.stringify(ctx.request.body))
+    let data = await User.getUserByWeChatID(weChatID)
+    // console.log(typeof(data),data)
+    if(data.length != 0){
+            ctx.rest({
+            code:'200',
+            msg:'get the phone success!',
+            data
+        })
+    }else{
+        ctx.rest({
+            code:'-1',
+            msg:"找不到该weChatID的用户，请根据这个ID新建一个用户"
+        })
+    }
+    
     await next()
 }
 //通过ID查询某个用户
@@ -51,7 +62,7 @@ const getUser = async (ctx,next)=>{
 }
 module.exports = {
     'POST /api/addUser':addUser,
-    'POST /api/searchUserByPhone':searchUserByPhone,
+    'POST /api/searchUserByWeChatID':searchUserByWeChatID,
     'POST /api/searchUserByID':searchUserByID,
     'POST /api/createUser':createUser,
     'GET /api/getUser':getUser
