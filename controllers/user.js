@@ -1,14 +1,5 @@
 const User = require('../services/user')
-//添加用户
-const addUser = async (ctx,next)=>{
-    let userData = ctx.request.body
-    console.log('拿到新建用户的数据',userData)
-    ctx.rest({
-        code:'200',
-        msg:'get the user success!'
-    })
-    await next()
-}
+
 //通过微信UNIONID查询某个用户
 const searchUserByWeChatID = async (ctx,next)=>{
     let {weChatID} = ctx.request.body
@@ -61,7 +52,6 @@ const getUser = async (ctx,next)=>{
     await next()
 }
 module.exports = {
-    'POST /api/addUser':addUser,
     'POST /api/searchUserByWeChatID':searchUserByWeChatID,
     'POST /api/searchUserByID':searchUserByID,
     'POST /api/createUser':createUser,
