@@ -1,11 +1,11 @@
 const categories = [{
     name:'上衣',
-    pic:'http://baidu.com'
+    pic:'cloud://cloud1-3gr2q1p27aabec65.636c-cloud1-3gr2q1p27aabec65-1306255988/categoryIcons/jacket.png'
 },{
     name:'裤子',
-    pic:'http://baidu.com'
+    pic:'cloud://cloud1-3gr2q1p27aabec65.636c-cloud1-3gr2q1p27aabec65-1306255988/categoryIcons/trousers.png'
 },{
     name:'鞋子',
-    pic:'http://baidu.com'
+    pic:'cloud://cloud1-3gr2q1p27aabec65.636c-cloud1-3gr2q1p27aabec65-1306255988/categoryIcons/shoes.png'
 }]
 module.exports = categories

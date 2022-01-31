@@ -11,7 +11,7 @@ module.exports.getUserByID = async(id)=>{
     // console.log(data)
     return data
 }
-//通过用户微信的UNIONID查询用户信息
+//通过用户微信的OPENID查询用户信息
 module.exports.getUserByWeChatID = async(weChatID)=>{
     const data = await User.findAll({
         where:{

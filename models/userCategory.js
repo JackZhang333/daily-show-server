@@ -14,7 +14,7 @@ module.exports = db.defineModel('userCategory',{
     },
     categoryName:db.STRING(20),
     categoryPictureURL:{
-        type:db.STRING(50),
+        type:db.STRING(100),
         allowNull:true
     }
 })
