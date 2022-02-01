@@ -9,5 +9,8 @@ module.exports.deleteUserTag = async(id)=>{
 }
 //查找所有用户标签
 module.exports.getUserTag = async(userID) =>{
-    return await UserTag.findAll({where:{userID}})
+    return await UserTag.findAll({
+        where:{userID},
+        order:[['createdAt','DESC']]
+    })
 }
