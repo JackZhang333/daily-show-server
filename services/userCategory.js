@@ -18,5 +18,5 @@ module.exports.deletUserCategory = async (id) =>{
 
 //获取用户分类
 module.exports.getUserCategory = async(userID)=>{
-    return await UserCategory.findAll({where:{userID,order:[['createdAt','DESC']]}})
+    return await UserCategory.findAll({where:{userID},order:[['createdAt','DESC']]})
 }
