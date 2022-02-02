@@ -8,7 +8,7 @@ module.exports = db.defineModel('userBrand',{
         }
     },
     logoURL:{
-        type:db.STRING(50),
+        type:db.STRING(100),
         allowNull:true
     },
     brandName:db.STRING(20)
