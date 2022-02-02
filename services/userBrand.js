@@ -9,5 +9,5 @@ module.exports.deleteUserBrand = async(id)=>{
 }
 //查找所用用户品牌
 module.exports.getUserBrand = async(userID) =>{
-    return await UserBrand.findAll({where:{userID}})
+    return await UserBrand.findAll({where:{userID},order:[['createdAt','DESC']]})
 }
