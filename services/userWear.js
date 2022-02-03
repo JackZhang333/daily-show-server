@@ -26,7 +26,7 @@ module.exports.getUserWear = async (userID) => {
     //根据用户ID，可见性查找所有物品
     const wears = await UserWear.findAll(
         {
-            attributes: ['userID', 'userCategoryID', 'wearPictureURL', 'id'],
+            attributes: ['userID', 'userCategoryID', 'wearPictureURL', 'id','colorID','season'],
             where: {
                 userID, isVisible: true
             },
