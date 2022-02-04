@@ -20,7 +20,13 @@ module.exports.getDailyShow = async ({userID,offSet,limit})=>{
    //需要关联查询穿搭的物品，暂无实现
    return res
 }
-
+//通过userID和recordedTime查询用户记录
+module.exports.getDailyShowByTime = async({userID,recordedTime})=>{
+    const res = await DailyShow.findAll({
+        where:{userID,recordedTime},include:UserWear
+    })
+    return res
+}
 //更改穿搭
 module.exports.updateDailyShow = async(data)=>{
     const {id,...rest} = data
