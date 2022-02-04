@@ -22,8 +22,9 @@ module.exports.getDailyShow = async ({userID,offSet,limit})=>{
 }
 //通过userID和recordedTime查询用户记录
 module.exports.getDailyShowByTime = async({userID,recordedTime})=>{
+    console.log('获取的查询参数',userID,recordedTime)
     const res = await DailyShow.findAll({
-        where:{userID,recordedTime},include:UserWear
+        where:{userID,recordedTime},order:[['createdAt','DESC']],include:UserWear
     })
     return res
 }
