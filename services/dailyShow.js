@@ -2,8 +2,8 @@ const {DailyShow,DailyShowWear,UserWear} = require('../modelRelationShip')
 
 //新增每一天的穿搭记录
 module.exports.addDailyShow = async(data)=>{
-    const {userID,showMood,weather,temperature,showPictureURL,wearIDs} = data
-    const res = await DailyShow.create({userID,showMood:showMood||null,weather:weather||null,temperature:temperature||null,showPictureURL})
+    const {userID,showMood,weather,temperature,showPictureURL,wearIDs,recordedTime} = data
+    const res = await DailyShow.create({userID,recordedTime,showMood:showMood||null,weather:weather||null,temperature:temperature||null,showPictureURL})
     const {id:dailyShowID} = res
     // console.log('穿搭的物品数组:'+wearIDs)
     //根据记录关联的物品，增加到关系表

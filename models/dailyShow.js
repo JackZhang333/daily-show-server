@@ -8,6 +8,9 @@ module.exports = db.defineModel('dailyShow',{
             key:'id',
         }
     },
+    recordedTime:{
+        type:db.STRING(20),
+    },
     showPictureURL:db.STRING(50),
     showMood:{
         type:db.STRING(250),
