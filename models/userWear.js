@@ -9,7 +9,7 @@ module.exports = db.defineModel('userWear',{
         },
         allowNull:false
     },
-    wearPictureURL:db.STRING(50),
+    wearPictureURL:db.STRING(100),
     colorID:{
         type:db.STRING(50),
         allowNull:true
