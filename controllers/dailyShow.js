@@ -21,7 +21,7 @@ const getDailyShow = async(ctx,next)=>{
 }
 const getDailyShowByTime = async(ctx,next)=>{
     const data = ctx.request.body
-    const res = await DailyShow.getDailyShow(data)
+    const res = await DailyShow.getDailyShowByTime(data)
     ctx.rest({
         code:'200',
         data:res
