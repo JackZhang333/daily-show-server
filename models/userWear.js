@@ -14,6 +14,10 @@ module.exports = db.defineModel('userWear',{
         type:db.STRING(50),
         allowNull:true
     },
+    categoryName:{
+        type:db.STRING(20),
+        allowNull:true
+    },
     userBrandID:{
         type:db.STRING(50),
         allowNull:true
