@@ -19,7 +19,10 @@ let seq = new Sequelize(database,username,password,{
 
 seq.authenticate().then(()=>console.log('数据库连接成功')).catch(e=>console.log(e))
 // seq.close().then(()=>console.log('链接断开')).catch(e=>console.log(e))
-let now = Date.now()
+// let now = Date.now()
+function now(){
+    return new Date().getTime()
+}
 let defineModel = function(name,atts){
 
     let attributes = {}
@@ -54,8 +57,8 @@ let defineModel = function(name,atts){
             beforeValidate:(obj)=>{
                 if(obj.isNewRecord){
                     obj.id = generateId()
-                    obj.createdAt = now
-                    obj.updateAt = now
+                    obj.createdAt = now()
+                    obj.updateAt = now()
                     obj.version = 0
                     
                 }else{
