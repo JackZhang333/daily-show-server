@@ -9,7 +9,7 @@ module.exports = db.defineModel('userWear',{
         },
         allowNull:false
     },
-    wearPictureURL:db.STRING(100),
+    wearPictureURL:db.STRING(150),
     colorID:{
         type:db.STRING(50),
         allowNull:true
@@ -20,6 +20,10 @@ module.exports = db.defineModel('userWear',{
     },
     userBrandID:{
         type:db.STRING(50),
+        allowNull:true
+    },
+    brandName:{
+        type:db.STRING(20),
         allowNull:true
     },
     season:{
