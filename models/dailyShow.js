@@ -11,7 +11,7 @@ module.exports = db.defineModel('dailyShow',{
     recordedTime:{
         type:db.STRING(20),
     },
-    showPictureURL:db.STRING(50),
+    showPictureURL:db.STRING(100),
     showMood:{
         type:db.STRING(250),
         allowNull:true

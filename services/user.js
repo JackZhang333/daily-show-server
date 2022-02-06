@@ -1,6 +1,10 @@
 const {user:User} = require('../model')
-const {userCategory:UserCategory} = require('../model')
-const standardCategories = require('../standardCategory')
+const {userCategory:UserCategory,userBrand:UserBrand,userTag:UserTag} = require('../model')
+
+const standardCategories = require('../configs/standardCategory')
+const standardBrands = require('../configs/standardBrands')
+const standardTags = require('../configs/standardTags')
+
 //通过用户ID查询用户信息
 module.exports.getUserByID = async(id)=>{
     const data = await User.findAll({
@@ -28,6 +32,16 @@ module.exports.createUser = async(data)=>{
     for(let cate of standardCategories){
         let {name,pic} = cate
         await UserCategory.create({userID:res.id,categoryName:name,categoryPictureURL:pic})
+    }
+    //在用户的品牌表写入初始化的标准品牌列表
+    for(let brand of standardBrands){
+        let {brandName,logoURL} = brand
+        await UserBrand.create({userID:res.id,brandName,logoURL})
+    }
+    //在用户的标签表写入初始化的标准标签列表
+    for (let tag of standardTags){
+        let {tagName} = tag
+        await UserTag.create({userID:res.id,tagName})
     }
     return res
 }
