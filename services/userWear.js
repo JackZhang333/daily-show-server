@@ -2,9 +2,9 @@
 const { UserTag, UserWear, WearTag } = require('../modelRelationShip')
 //新增衣物
 module.exports.addUserWear = async (data) => {
-    const { userID, userCategoryID, wearPictureURL, colorID, userBrandID, season, tagIDs,categoryName } = data
+    const { userID, userCategoryID, wearPictureURL, colorID, userBrandID, season, tagIDs,categoryName,brandName } = data
     //新建物品表里的一条数据
-    const res = await UserWear.create({ userID, userCategoryID, wearPictureURL, colorID: colorID || null, userBrandID: userBrandID || null, season,categoryName })
+    const res = await UserWear.create({ userID, userCategoryID, wearPictureURL, colorID: colorID || null, userBrandID: userBrandID || null, season,categoryName,brandName })
     //新建物品标签关系表多条数据
     if (tagIDs) {
         const userWearID = res.id
